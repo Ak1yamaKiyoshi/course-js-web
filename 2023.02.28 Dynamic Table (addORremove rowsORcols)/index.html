@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./index.js"></script>
+
+</head>
+<body>
+    
+    
+    <div id="table_container">
+        <div id="table_col_button_container">
+
+            <table id="table">
+                <tr id="row0"> 
+                    <th class="tableCell"> <input type="text" class="tableCellInput"> </th>
+                    <th class="tableCell"> <input type="text" class="tableCellInput"> </th>
+                </tr>
+                <tr id="row1"> 
+                    <th class="tableCell"> <input type="text" class="tableCellInput"> </th>
+                    <th class="tableCell"> <input type="text" class="tableCellInput"> </th>
+                </tr>
+            </table>
+            <div  class="remove button" id="rowsButton" onclick="removeColumns()">  </div>
+            <div class="button" id="rowsButton" onclick="addColumns()">  </div>
+        </div>
+        <div class="remove button" id="colsButton" onclick="removeRows()">  </div>
+        <div class="button" id="colsButton" onclick="addRows()">  </div>
+    </div>
+
+
+
+
+</body>
+</html>

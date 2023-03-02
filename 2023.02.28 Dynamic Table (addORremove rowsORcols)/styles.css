@@ -1,0 +1,66 @@
+textarea:focus, input:focus{
+    outline:none;
+    box-shadow: 0px 3px 0 0 cadetblue;
+    transition: box-shadow .1s;
+}
+
+input {
+    border: none;
+    margin: 0;
+    width: 50px;
+}
+
+p {
+    margin: 0px;
+}
+
+
+#table {
+    border-collapse: collapse;
+    margin: 0;
+    justify-self: center;
+    width: fit-content;
+}
+
+.tableCell {
+    border: 1px solid black;
+    width: fit-content;
+}
+
+
+#table_col_button_container {
+    display: flex;
+    justify-content: column;
+}
+
+.button {
+    box-shadow: 0 1px 4px 0px black;
+    border-radius: 90px;
+    font-weight: 900;
+    font-size: large;
+    display: flex;    
+    text-align: center;
+    margin: 5px;
+}
+.button:hover {
+    background-color: cadetblue;
+    transition:  background-color .1s;
+}
+
+
+#colsButton {
+    width: 30px;
+    height: 15px;
+}
+
+
+#rowsButton {
+    width: 15px;
+    height: 30px;
+}
+
+.remove:hover { 
+    background-color: rgb(160, 97, 95);
+
+    transition: all .1s;
+}
