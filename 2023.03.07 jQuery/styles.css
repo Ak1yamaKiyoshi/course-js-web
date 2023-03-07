@@ -1,0 +1,13 @@
+.currency_dropdown {
+    display: none;
+    z-index: 999;
+    border: 10px solid black;
+}
+.currency_dropdown_menu.show {
+    display: block;
+    border: 1px solid black;
+}
+
+.currency_dropdown_item {
+    border: 4px solid black;
+}
