@@ -7,31 +7,50 @@
     <title> currency calculator </title>
     <script src="jquery.min.js"> </script>
     <script src="./index.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container"> 
 
         <div class="currency_containter"> 
-            <div class="currencyIn"> 
-                <div > 
-                    <button class="currency_dropdown_toggle" type="button" >  
-                        Change currency
-                    </button>
-                        <ul class="currency_dropdown" hidden>
-                            <li> <p class="currency_dropdown_item">  1</p></li>
-                            <li> <p class="currency_dropdown_item">  3</p></li>
-                            <li> <p class="currency_dropdown_item">  2</p></li>
-                        </ul>
-                </div> 
-                
-                
-                <input type="text" id="amount_input">
+            <div> 
+                <input type="text" id="amount_input">  
+                <button class="currency_dropdown_toggle" id="button_in" type="button" >  
+                    Ukranian Hrivnya
+                    <ul id="in" hidden>
+                        <p>  Ukranian Hrivnya </p>
+                        <p>  US Dollar </p>
+                        <p>  Canadian Dollar </p>
+                        <p>  Ukranian Hrivnya </p>
+                        <p>  US Dollar </p>
+                        <p>  Canadian Dollar </p>
+                    </ul>
+                </button>
+
             </div>
-            <div class="currencyOut"> 
-                <p id="amount_output"></p>
+
+            <div> 
+                <div id="amount_output"> 100000 </div>
+                <button class="currency_dropdown_toggle" id="button_out" type="button" >  
+                    Ukranian Hrivnya
+                    <ul id="out" hidden>
+                        <p>  Ukranian Hrivnya </p>
+                        <p>  US Dollar </p>
+                        <p>  Canadian Dollar </p>
+                        <p>  Ukranian Hrivnya </p>
+                        <p>  US Dollar </p>
+                        <p>  Canadian Dollar </p>
+                    </ul>   
+                </button>
+              
             </div>
+
+            
         </div>
-        <!-- Calculate Button --> 
+        <button id="calculate">
+            calculate 
+        </button>
             
     </div>
 </body>
