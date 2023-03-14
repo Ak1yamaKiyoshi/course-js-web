@@ -23,11 +23,9 @@ p {
     transition: all .1s;
 }
 
-
 .currency_containter div  {
     display: flex;
     justify-content: row;
-
 }
 
 .currency_containter div ul {
