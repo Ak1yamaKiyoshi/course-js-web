@@ -3,14 +3,13 @@ p, input {
     padding: 0;
 }
 
-
-
 .currency {
     width: fit-content;
-    height: fit-content;
+    height: 40px;
     display: flex;
     justify-content: row;
     margin: 10px;
+    
 }
 
 .currency input:focus {
@@ -20,17 +19,18 @@ p, input {
 }
 
 .currency p, .currency input {
+    width: 150px;
     font-size: large;
-    width: 200px;
     font-family: 'PT Sans', sans-serif;
     border: 2px solid #4a57a1;
     border-radius: 10px 0 0 10px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
     padding-left: 7px;
-    
 }
 
-.currency select{
+.currency p {padding-top: 6px;}
+.currency select option:focus{background-color: #4a57a1;}
+.currency select {
     background-color: #4a57a1;
     color: rgb(255, 255, 255);
     font-size: medium;
@@ -39,5 +39,4 @@ p, input {
     border-color: #4a57a1;
     border-radius: 0 10px 10px 0px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
-
 }
