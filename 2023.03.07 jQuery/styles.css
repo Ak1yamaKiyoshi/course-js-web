@@ -1,85 +1,26 @@
-p, button {
+p, input {
     margin: 0;
     padding: 0;
-    font-size:medium;
-}   
-p {
-    font-family: 'PT Sans', sans-serif;
 }
 
-.currency_containter input {
-    font-size: large;
-    outline: none;
-    width: 120px;
-    border-color: #4a57a1;
-    border-radius: 10px 0 0 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
-    padding-left: 7px;
+.currency {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    justify-content: row;
+    margin: 10px;
+    
 }
 
-.currency_containter input:focus {
+.currency input:focus {
     outline: none;
     border-color: #16267e;
     transition: all .1s;
 }
 
-.currency_containter div  {
-    display: flex;
-    justify-content: row;
-}
-
-.currency_containter div ul {
-    position: absolute;
-    list-style-type: none;
-}
-
-.currency_containter div {
-    width: fit-content;
-    padding-top: 10px;
-
-}
-
-.currency_containter div button {
-    border: 0;
-    background-color: #4a57a1;
-    border-radius: 0 10px 10px 0px;
-    width: 120px;
-    height: 50px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
-    color: rgb(255, 255, 255);
-}
-
-
-.currency_containter div ul p:hover {
-    color: white;
-    background-color: #2c3461;
-    transition: all .05s;
-}
-
-.currency_containter div ul p {
-    padding: 5px;
-    padding-top: 7px;
-    color: white;
-    background-color: #4a57a1;
-    z-index: 10;
-    margin-top: -1px;
-    width: 110px;
-
-}
-
-.currency_containter div ul p:last-child {
-    border-radius: 0 0 10px 10px;
-}
-
-.currency_containter div ul {
-    margin-left: -40px;
-    margin-top: 0;
-    z-index: 11;
-}
-
-#amount_output {
+.currency p, .currency input {
+    width: 150px;
     font-size: large;
-    width: 124px;
     font-family: 'PT Sans', sans-serif;
     border: 2px solid #4a57a1;
     border-radius: 10px 0 0 10px;
@@ -87,14 +28,15 @@ p {
     padding-left: 7px;
 }
 
-#calculate {
-    margin-top: 10px;
-    border: 0;
+.currency p {padding-top: 6px;}
+.currency select option:focus{background-color: #4a57a1;}
+.currency select {
     background-color: #4a57a1;
-    
-    border-radius: 10px;
-    width: 120px;
-    height: 50px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
     color: rgb(255, 255, 255);
+    font-size: medium;
+    outline: none;
+    width: 170px;
+    border-color: #4a57a1;
+    border-radius: 0 10px 10px 0px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.562);
 }

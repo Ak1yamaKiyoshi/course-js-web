@@ -1,55 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> currency calculator </title>
+    <title> Converter </title>
     <script src="jquery.min.js"> </script>
     <script src="index.js"> </script>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container"> 
-
-        <div class="currency_containter"> 
-            <div> 
-                <input type="text" id="amount_input">  
-                <button class="currency_dropdown_toggle" id="button_in" type="button" >  
-                    <p id="input_button_name"></p>
-                    <ul id="in" hidden>
-                        <p>  Ukranian Hrivnya </p>
-                        <p>  US Dollar </p>
-                        <p>  Canadian Dollar </p>
-                        <p>  Ukranian Hrivnya </p>
-                        <p>  US Dollar </p>
-                        <p>  Canadian Dollar </p>
-                    </ul>
-                </button>
-
-            </div>
-
-            <div> 
-                <div id="amount_output"> 100000 </div>
-                <button class="currency_dropdown_toggle" id="button_out" type="button">  
-                    <p id="input_button_name"></p>
-                    <ul id="out" hidden>
-                        <p>  Ukranian Hrivnya </p>
-                        <p>  US Dollar </p>
-                        <p>  Canadian Dollar </p>
-                        <p>  Ukranian Hrivnya </p>
-                        <p>  US Dollar </p>
-                        <p>  Canadian Dollar </p>
-                    </ul> 
-                </button>
-            </div>    
-        </div>
-
-        <button id="calculate">
-            calculate 
-        </button>
-            
+    <div class="currency" id="currency_in">
+        <input type="number">
+        <select id="select_currency_in"> </select>
+    </div>
+    <div class="currency" id="currency_out">
+        <p></p>
+        <select id="select_currency_out"> </select>
     </div>
 </body>
 </html>
