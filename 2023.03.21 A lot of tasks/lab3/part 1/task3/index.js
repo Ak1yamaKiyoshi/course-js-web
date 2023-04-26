@@ -6,7 +6,6 @@ $(document).ready(function() {
 });
 
 
-
 /*
     Cтворіть функцію createHeaders(N),
      яка створить на сторінці N заголовків другого рівня (<h2>) з написами Header1, Header2 … HeaderN.
