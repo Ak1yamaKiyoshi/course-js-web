@@ -1,0 +1,41 @@
+<style>
+    :root {
+        --width: 150px;
+        --height: 200px;
+    }
+
+    .card {
+        background-color: black;
+        width: var(--width);
+        height: var(--height);
+        border-radius: 10px;
+    }
+    .card_back {
+        background-color: aqua;
+        transition-delay: .5s;
+        transition-property: background-color;
+    }
+    .card_front {
+        background-color: black;
+        transition-delay: .5s;
+        transition-property: background-color;
+    }
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+   <div class="card">
+    <div class="card_front"></div>
+   </div>
+</body>
+
+</html>

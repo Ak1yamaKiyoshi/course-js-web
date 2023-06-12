@@ -1,0 +1,72 @@
+<style>
+    p {
+        margin: 5px;
+    }
+    .comment {
+        color: #606C5D;
+        margin-top: 10px;
+        width: 300px;
+        background-color: #FFF4F4;
+        border-radius: 5px;
+        border: 2px solid #606C5D;
+    }
+    .comment p {
+        justify-self: center;
+    }
+    .comment_info {
+        background-color:#606C5D;
+        color: #FFF4F4; 
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: stretch;
+    }
+    .message {
+        color: #606C5D;
+        overflow-wrap: break-word;
+        margin-top: 10px;
+        background-color: #FFF4F4;
+        border-radius: 5px;
+        border: 2px solid #606C5D;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 280px;
+    }
+    .message button {
+        background-color:#606C5D;
+        color: #F7E6C4;
+        border-radius: 5px;
+        margin: 10px;
+    }
+    .message textarea, .message input {
+        background-color: FFF4F4;
+        border-radius: 5px;
+        border: 2px solid #606C5D;
+    }
+</style>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery.min.js"></script>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="comments_section"> </div>
+    <div class="comment"> <div class="comment_info"><p>${name}</p><p>${date}</p></div><p>${comment}</p></div>
+    <div class="message">
+        <p> Enter name </p>
+        <input type="text">
+        <p> Enter comment </p>
+        <textarea cols="30" rows="10"></textarea>
+        <button id="submit"> send </button>
+    </div>
+</body>
+
+</html>
