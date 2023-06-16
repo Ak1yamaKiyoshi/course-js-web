@@ -1,9 +1,14 @@
 
 $(document).ready(function() {
+    console.log(document.cookie)
     $('textarea').val(document.cookie)
     $('button').click(function() {
-        // to_save=132; expires=Tue, 13 Jun 2023 11:12:26 GMT; path=/
-        let cookie =`to_save=${$('textarea').val()}; expires=${(new Date(parseInt((new Date()).getTime()) + 86400000)).toUTCString()}; path=/` 
+
+        // expires=${(new Date(parseInt((new Date()).getTime()) + 86400000)).toUTCString()};
+        //  path=/
+        console.log($('textarea').val())
+        let cookie =`to_save=${$('textarea').val()};` 
         document.cookie = cookie
+        console.log(document.cookie)
     });
 })

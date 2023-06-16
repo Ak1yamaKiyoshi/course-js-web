@@ -5,4 +5,4 @@ $(document).ready(function() {
         $('#image').css(  {'width': (state) ? $('#image').width()/2+'px' : $('#image').width()*2+'px'});
         state = !state;
     });
-});
+}); 
