@@ -2,15 +2,17 @@ import React from 'react';
 import './Post.css';
 
 
-function Post() {
+function Post(props) {
   const [title, setTitle] = React.useState('Some title');
-  const [text, setText] = React.useState('Some text');
-  const [author, setAuthor] = React.useState('Some author');
+  const [text, setText] = React.useState(props.post.text);
+  const [author, setAuthor] = React.useState(props.post.author);
   const [date, setDate] = React.useState(new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
-  const [canEdit, setCanEdit] = React.useState(false);
+  const [editNow, setEditNow] = React.useState(false);
+  const [canEdit, setCanEdit] = React.useState(true);
+  const [imageSrc, setImageSrc] = React.useState(require('./images/example.jpg'))
 
   function handleEditButtonPress() {
-    setCanEdit(false)
+    setEditNow(false)
   }
 
   function handleInput({ target }) {
@@ -25,40 +27,55 @@ function Post() {
 
   function view() {
     return (
+      <div className='container_bg'>
       <div className='container'>
-        <div className="post">
-          <div className='title'>
-            <h1> {title}  </h1>
+          <div className='heading'> 
+  
+          <h1> {title} </h1>
+          <p>  {date}   </p>
           </div>
-          <p className='date'> {date} </p>
-          <p> {text} </p>
-          <p> {author} </p>
-        </div>
-        <button onClick={() => { setCanEdit(true) }}> Edit </button>
+          <div className='image-container'>
+          <img src={imageSrc}/>  
+          </div>
+            
+          <div className='article'> 
+          <p>  {text}   </p>
+          <p id="author">  {author} </p>
+          </div>
+        {(canEdit) 
+          ? (<button onClick={() => { setEditNow(true) }}> Edit </button>)
+          : (<div></div> )
+        }
       </div>
+        </div>
     )
   }
 
   function edit() {
     return (
+      <div className='container_bg'> 
       <div className='container'>
-        <div className="post_edit">
-          
-          <input className='titleInput' id="title" type="text" value={title} onChange={handleInput} />
-          <label htmlFor="text"> text </label>
-          <textarea id="text" className='textInput' type="text" value={text} onChange={handleInput} />
-          <label htmlFor="author"> author </label>
-          <input id="author" className='author_post' type="text" value={author} onChange={handleInput} />
-        </div>
-          <button className='viewButton' onClick={handleEditButtonPress}> View </button>
+          <div className='heading'> 
+          <input id="title" type="text" value={title} onChange={handleInput} />
+          <p> {date} </p>
+          </div>
+          <div className='image-container'>
+          <img src={imageSrc}/>  
+          </div>
+          <div className='article'> 
+          <p id="note"> You can edit heading, text and author </p>
+          <textarea id="text" type="text" value={text} onChange={handleInput} />
+          <input id="author"  type="text" value={author} onChange={handleInput} />
+          </div>
+          <button onClick={handleEditButtonPress}> View </button>
+      </div>
       </div>
     )
   }
 
-
   return (
     <div>
-      {(canEdit) ? edit() : view()}
+      {(editNow) ? edit() : view()}
     </div>
   );
 }
