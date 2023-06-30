@@ -1,26 +1,59 @@
+body {
+    overflow-x: hidden;
+}
+
 .app-outer-container {
+    flex-shrink: 0;
     display: flex;
-    width: 100%;
+    overflow-x: hidden;
+    width:100vw;
+    justify-self: center;
     height: 100%;
     flex-direction: column;
     justify-content: center;
+
 }
 
 .app-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: fit-content;
+    width: min-content;
     margin-top: 20px;
     align-self: center;
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
     .app-sides-container {
         display: flex;
         flex-direction: row;
+    }
+}
+@media only screen and (width > height) {
+    .app-sides-container {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
+@media only screen and (max-width: 800px) {
+    .app-outer-container {
+        margin-top: 230px;
+        transform: scale(1.5);
+    }
 }
+@media only screen and ( min-width:800px ) and ( min-height: 850px ) {
+    .app-outer-container {
+        margin-top: 50px;
+        transform: scale(1.2);
+    }
+}
+@media only screen and ( min-width:1000px ) and ( min-height: 850px ) {
+    .app-outer-container {
+        margin-top: 130px;
+        transform: scale(1.5);
+    }
+}
+
 
 .left, .right {
     margin-top: 15px;

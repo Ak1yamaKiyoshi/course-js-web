@@ -1,49 +1,50 @@
-.schedule-element-container {
-    margin: 5px;
+.task-element-container {
+    margin: 10px;
     width: 264px;
     height: 30px;
     font-family: var(--font);
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     background-color:var(--another);
     border-radius: var(--border-round-big);
 
 }
 
-.schedule-element-container input{ 
+.task-element-container input{ 
     border: none;
     font-size: 12px;
     font-family: var(--font);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-
     flex-shrink: 0;
     outline: none;
     border-radius: var(--border-round-big);
-    
-    
-}
-.schedule-element-time {
-    background-color:var(--another);
-    color: var(--text);
-    width: 26%;
-    padding-top: 4px;
-    height: 80%;
-    text-align: center;
-    padding-left: 4px;
-}
-.schedule-element-text {
     text-align: left;
     margin-top: 0.75%;
-    margin-left: -25px;
     background-color: var(--secondary);
     color: var(--another);
-    width: 76.5%;
-    height: 21px;
+    width: 83.3%;
+    height: 20px;
+    margin-top: 1%;
     padding-top: 4px;
+    margin-right: 3px;
     padding-left: 10px;
 }
+.task-element-container p {
+    font-family: var(--font);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--text);
+    font-size: 12px;
+    margin-top: 3.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
 
 
 :root {
