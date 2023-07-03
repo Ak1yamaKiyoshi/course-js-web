@@ -1,18 +1,31 @@
 import React from 'react';
 import './Post.css';
+import { BlogsContext, IsAdminContext } from '../App/App.js'
+
+function Post({blogIndex}) {
+
+  const { blogs, setBlogs} = React.useContext(BlogsContext);
+  const { isAdmin, setIsAdmin } = React.useContext( IsAdminContext);
 
 
-function Post(props) {
-  const [title, setTitle] = React.useState('Some title');
-  const [text, setText] = React.useState(props.post.text);
-  const [author, setAuthor] = React.useState(props.post.author);
-  const [date, setDate] = React.useState(new Date().toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+  const [title, setTitle] = React.useState( blogs[blogIndex].title );
+  const [text, setText] = React.useState( blogs[blogIndex].text) ;
+  const [author, setAuthor] = React.useState( blogs[blogIndex].author );
+  const [date, setDate] = React.useState( blogs[blogIndex].date.toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
   const [editNow, setEditNow] = React.useState(false);
   const [canEdit, setCanEdit] = React.useState(true);
-  const [imageSrc, setImageSrc] = React.useState(require('./images/example.jpg'))
 
   function handleEditButtonPress() {
-    setEditNow(false)
+    setEditNow(false);
+    let blogsCopy = blogs;
+    blogs[blogIndex] = {
+      title: title,
+      text: text, 
+      author: author,
+      date: (new Date())
+    }
+    setBlogs(blogs);
+    console.log(blogs[blogIndex])  
   }
 
   function handleInput({ target }) {
@@ -35,7 +48,7 @@ function Post(props) {
           <p>  {date}   </p>
           </div>
           <div className='image-container'>
-          <img src={imageSrc}/>  
+          
           </div>
             
           <div className='article'> 
@@ -50,7 +63,7 @@ function Post(props) {
         </div>
     )
   }
-
+  //<img src={imageSrc}/>  .
   function edit() {
     return (
       <div className='container_bg'> 
@@ -60,14 +73,14 @@ function Post(props) {
           <p> {date} </p>
           </div>
           <div className='image-container'>
-          <img src={imageSrc}/>  
+          
           </div>
           <div className='article'> 
           <p id="note"> You can edit heading, text and author </p>
           <textarea id="text" type="text" value={text} onChange={handleInput} />
           <input id="author"  type="text" value={author} onChange={handleInput} />
           </div>
-          <button onClick={handleEditButtonPress}> View </button>
+          <button onClick={handleEditButtonPress}> View (confirm) </button>
       </div>
       </div>
     )
@@ -75,7 +88,7 @@ function Post(props) {
 
   return (
     <div>
-      {(editNow) ? edit() : view()}
+      {(editNow && isAdmin) ? edit() : view()}
     </div>
   );
 }
