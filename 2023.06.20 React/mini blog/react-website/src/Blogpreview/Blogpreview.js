@@ -29,7 +29,6 @@ function Blogpreview({ blogIndex }) {
     const { isAdmin, setIsAdmin } = React.useContext(IsAdminContext);
     function getIndexInBlog(e) { return }
     function getPathFromBlogElement(e) { return `/blog${blogs.indexOf(e)}`; }
-    console.log('waht i need to know', new Date().getMinutes)
 
     const forceUpdate = useForceUpdate();
 
@@ -52,8 +51,6 @@ function Blogpreview({ blogIndex }) {
                         element={<Post blogIndex={blogs.indexOf(e)} />}
                     />))
             } </Routes>
-
-
         </div>
     );
 }

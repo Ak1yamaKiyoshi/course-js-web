@@ -19,11 +19,15 @@ function Home() {
 
     return (
         <div>
-            <Navigation></Navigation>
+            <Navigation onClick={() => {console.log('a')}}></Navigation>
             <div className="home-container">
-                <Blogpreview></Blogpreview>
+                {(window.location.pathname == '/home')
+                ? <Blogpreview></Blogpreview>
+                : <> </>}
             </div>
         </div>
+
+
     )
 }
 
