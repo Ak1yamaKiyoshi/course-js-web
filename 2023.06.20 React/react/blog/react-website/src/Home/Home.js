@@ -11,19 +11,23 @@ import {
     Route,
     Link,
     useRoutes,
-  } from "react-router-dom";
+} from "react-router-dom";
 
-  
+
 function Home() {
     const [isOpen, setOpen] = React.useState(false);
-    
+
     return (
         <div>
-            <Navigation></Navigation>
+            <Navigation onClick={() => {console.log('a')}}></Navigation>
             <div className="home-container">
-            <Blogpreview></Blogpreview>
+                {(window.location.pathname == '/home')
+                ? <Blogpreview></Blogpreview>
+                : <> </>}
             </div>
         </div>
+
+
     )
 }
 
