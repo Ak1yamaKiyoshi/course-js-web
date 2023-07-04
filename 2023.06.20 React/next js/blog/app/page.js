@@ -29,7 +29,7 @@ export default function Login() {
         <input type="text" id="login-name-input" /> 
         <label htmlFor="login-password-input"> Password </label>
         <input type="text" id="login-password-input" /> 
-      
+        
       </form>
       <button> Submit </button>
 
