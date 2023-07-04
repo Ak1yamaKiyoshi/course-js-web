@@ -15,11 +15,6 @@ export default function Navigation() {
           : <h1> 🛒 Basket </h1> }
         
       </Link>
-      <Link to="/"> 
-      {  (window.location.pathname) == '/'
-          ? <h1 className='navigation-switched-block'> 🏠 Home </h1>
-          : <h1> 🏠 Home </h1> }
-      </Link>
       <Link to="/shop"> 
       {  (window.location.pathname) == '/shop'
           ? <h1 className='navigation-switched-block'>🛍️ Buy </h1>
