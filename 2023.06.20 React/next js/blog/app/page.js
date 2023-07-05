@@ -7,12 +7,6 @@ import { IsAdminContext } from '@/context/IsAdminContext';
 //import db from "@/database/db"
 
 
-/*
-<IsAdminContext.Provider value={{isAdmin, setIsAdmin}}> 
-</IsAdminContext.Provider>
-import { BlogsContext, IsAdminContext } from '../App/App.js'
-const { isAdmin, setIsAdmin } = React.useContext( IsAdminContext);
-*/
 
 export default function Login() {
   const {isAdmin, setIsAdmin} = React.useContext(IsAdminContext);
@@ -22,23 +16,17 @@ export default function Login() {
   }
 
   return (
-    <div> 
+    <div className={styles.login_page_container}> 
       <h1> Login </h1>
       <form onSubmit={handleSubmit}> 
         <label htmlFor="login-name-input"> Name </label>
         <input type="text" id="login-name-input" /> 
         <label htmlFor="login-password-input"> Password </label>
-        <input type="text" id="login-password-input" /> 
-        
+        <input type="text" id="login-password-input" />
       </form>
       <button> Submit </button>
-
-
+      <button> Im not an admin </button>
     </div>
     )
-    // login as user/admin
-    // if user, no data asked
-    // if admin, name + password
-    // + create context for isAdmin
        
 }

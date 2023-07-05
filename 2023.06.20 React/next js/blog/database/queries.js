@@ -133,4 +133,4 @@ class Interface_db {
 } 
 
 
-export default Interface_db
+exports.Interface_db =Interface_db
