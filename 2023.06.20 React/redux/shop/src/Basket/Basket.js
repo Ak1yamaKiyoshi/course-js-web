@@ -9,12 +9,19 @@ export default function Basket() {
 
   function handleClick (e) {
     let parent = jQuery(e.target)
-    console.log(parent.children())
+    if ( parent.prop("tagName") == "H2" || parent.prop("tagName") == "P")
+      parent = parent.parent();
+
     let title = parent.children()[0].textContent.trim();
     let price = parent.children()[1].textContent.trim();
-    dispatch(remove({title:title, price:price}));
-    // find index of  
-    // Deletes wrong 
+    let index = -1;
+    for (let i = 0; i < 100; i++) 
+      if (basket[i] && basket[i].payload.title.trim() == title) 
+        index = i;    
+    
+    
+    if ( index != -1 ) 
+      dispatch(remove(index));
   }
 
   return (<>

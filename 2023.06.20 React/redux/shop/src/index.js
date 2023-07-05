@@ -23,5 +23,3 @@ root.render(
     </Provider>
   </React.StrictMode>
 );
-
-// https://react-redux.js.org/tutorials/quick-start
