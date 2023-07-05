@@ -7,7 +7,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+a {text-decoration: none;}
+
+:root {
+  --foreground-general:#fff;
+  --foreground-secondary: rgb(225, 225, 225);
+  --foreground-accents: #1a0d55;;
+  --text-general: rgb(33, 33, 33);
+  --text-secondary: rgb(100, 100, 100);
+  --text-opposite: #fff;
+  --text-accent: blue;
+  --border-radius-big:15px;
+  --border-radius-small:90px;
+  --border: 2px solid var(--foreground-accents);
+  --button-height: 35px;
+  --padding-left: 10px;
+  --font-size: 20px;
+  --font-accent-family:'Montserrat', sans-serif;
+  --font-size-headers: 40px;
+  --font-size-medium: 20px;
+  --font-size-small: 15px;
 }
