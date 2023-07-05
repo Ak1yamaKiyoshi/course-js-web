@@ -31,7 +31,9 @@
     padding-left: var(--padding-left);
     padding-top: 5px;
     padding-bottom: 5px;
+    background-color: var(--foreground-secondary);
     font-size: var(--font-size);
+    color: var(--text-accent);
 }
 
 .login-outer-container h1 {

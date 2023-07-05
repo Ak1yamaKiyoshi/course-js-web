@@ -10,13 +10,15 @@ body {
 a {text-decoration: none;}
 
 :root {
-  --foreground-general:#fff;
-  --foreground-secondary: rgb(225, 225, 225);
-  --foreground-accents: #1a0d55;;
-  --text-general: rgb(33, 33, 33);
-  --text-secondary: rgb(100, 100, 100);
-  --text-opposite: #fff;
-  --text-accent: blue;
+  --foreground-general:   rgb(217, 217, 244);
+  --foreground-secondary: rgb(104, 95, 173);
+  --foreground-accents:   rgb(207, 207, 250);
+
+  --text-general: var(--foreground-secondary);
+  --text-secondary: var(--foreground-accents);
+  --text-opposite:  var(--foreground-secondary);
+  --text-accent: var(--foreground-accents);
+  
   --border-radius-big:15px;
   --border-radius-small:90px;
   --border: 2px solid var(--foreground-accents);

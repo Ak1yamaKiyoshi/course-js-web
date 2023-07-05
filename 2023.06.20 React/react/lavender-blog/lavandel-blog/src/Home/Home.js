@@ -7,7 +7,8 @@ import { Link } from "react-router-dom";
 export default function Home() {
 
 
-    return (<div >
+    return (
+    <div className="home-outer-container">
         <h1> Home </h1>
     </div>);
 }
