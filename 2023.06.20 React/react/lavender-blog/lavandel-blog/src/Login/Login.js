@@ -20,12 +20,10 @@ export default function Login() {
         let output = 0;
         admins.forEach(admin => {
             if ( admin.name == username && admin.password == password ) {
-
-                navigate('./home');
+                navigate('../home');
                 dispatch(login());
             }
         });
-        console.log(isLogged)
     }
     function handleInput(e) {
         if (e.target.id == 'login-username-input')
@@ -43,7 +41,7 @@ export default function Login() {
         <p> Password </p>
         <input id="login-password-input" onChange={handleInput}/>
         <h2 onClick={handleLoginClick}> login </h2>
-        <Link to="/home"> 
+        <Link to="../home" onClick={() => {dispatch(unlog())}}> 
             <h3>  Not admin </h3>
         </Link>
         </div>

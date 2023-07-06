@@ -13,7 +13,7 @@ export const adminReducer = createSlice({
     },
     reducers: {
         push: (state, element) => {
-            state.blogs.push(element);
+            state.blogs.push(element.payload);
         },
         remove: (state, index) => {
             state.blogs = [

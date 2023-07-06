@@ -13,6 +13,9 @@ export default function Navigation() {
             <Link to="/">
                 <h1>~ Lavender blog ~</h1>
             </Link>
+            <Link to="/login">
+                <h2> Login </h2>
+            </Link>
         </div>
     </div>);
 }

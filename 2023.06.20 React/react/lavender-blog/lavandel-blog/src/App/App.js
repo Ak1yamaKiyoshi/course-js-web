@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
 
+import Login from '../Login/Login';
+import Navigation from '../Navigation/Navigation';
+import Home from '../Home/Home';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+//
+
+
 function App() {
+  const routes = useSelector((state) => state.blogRoutes.routes);
+  let appRouter = createBrowserRouter([
+    {path:"/login",element:<><Navigation/> <Login/></> }, 
+    {path:"/home/",element: <><Navigation/><Home/></> },
+    {path:"/",element: <><Navigation/><Home/></> }, 
+    ...routes
+  ]);  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RouterProvider router={appRouter} /> 
   );
 }
 

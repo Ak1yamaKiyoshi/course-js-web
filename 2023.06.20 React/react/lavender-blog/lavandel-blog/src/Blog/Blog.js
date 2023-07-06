@@ -8,11 +8,11 @@ import jquery from "jquery";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Blog({  ind1ex }) {
+export default function Blog({index}) {
     const blogs = useSelector((state) => state.blogs.blogs);
     const isLogged = useSelector((state) => state.admins.isAdminLogged);
     const dispatch = useDispatch();
-    let index= 0
+    
     const [title, setTitle] =     React.useState(blogs[index].title);
     const [author, setAuthor] =   React.useState(blogs[index].author);
     const [content, setContent] = React.useState(blogs[index].content);
@@ -33,12 +33,15 @@ export default function Blog({  ind1ex }) {
     }
 
     function confirmBlog() {
-        dispatch(update(index, {
-            title: title,
-            content: content,
-            author: author,
-            date:date
-        }))
+        setDate(new Date().toLocaleDateString("en-EN", { weekday: 'long', day: "numeric", month:'long', year: 'numeric'}))
+        dispatch(update({
+            index: index,
+            new: {
+                title: title,
+                content: content,
+                author: author,
+                date:date
+        }}));
     }
 
 
@@ -53,12 +56,12 @@ export default function Blog({  ind1ex }) {
                     <div className="blog-view-article-container">
                         <p id="blog-content"> {content} </p>
                     </div>
-                    {
-                        (isLogged)
-                            ? (<button onClick={() => { setEditing(true) }}> Edit </button>)
-                            : (<></>)
-                    }
-                    <div> </div>
+                    {(isLogged)
+                        ? (<button onClick={() => { 
+                            setEditing(true) 
+                        }}> Edit 
+                        </button>)
+                    : (<></>)}
                 </div>
             </div>
         </div>)
@@ -75,15 +78,14 @@ export default function Blog({  ind1ex }) {
                 <div className="blog-edit-article">
                     <input onChange={handleInput} id="blog-content" value={content}/> 
                 </div>
-                <div />
-                    {
-                        (isLogged)
-                            ? (<button onClick={() => { 
-                                setEditing(false);
-                                confirmBlog();
-                            }}> Edit </button>)
-                            : (<></>)
-                    }
+                <div/>
+                {(isLogged)
+                    ? (<button onClick={() => { 
+                        setEditing(false);
+                        confirmBlog();
+                    }}> Edit </button>)
+                    : (<></>)
+                }
                 </div>
             </div>
         </div>)
