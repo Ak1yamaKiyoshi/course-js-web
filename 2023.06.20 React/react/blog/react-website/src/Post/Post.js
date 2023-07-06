@@ -7,7 +7,6 @@ function Post({ blogIndex }) {
   const { blogs, setBlogs } = React.useContext(BlogsContext);
   const { isAdmin, setIsAdmin } = React.useContext(IsAdminContext);
 
-
   const [title, setTitle] = React.useState(blogs[blogIndex].title);
   const [text, setText] = React.useState(blogs[blogIndex].text);
   const [author, setAuthor] = React.useState(blogs[blogIndex].author);

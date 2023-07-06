@@ -10,8 +10,9 @@ export default function Navigation() {
     return (
     <div className="navigation-outer-container">
         <div className="navigation-inner-container"> 
-
-            <h1>~ Lavender blog ~</h1>
+            <Link to="/">
+                <h1>~ Lavender blog ~</h1>
+            </Link>
         </div>
     </div>);
 }
