@@ -30,7 +30,6 @@ export default function Login() {
           setUsername(jquery(e.target).val())
         else if ( e.target.id == 'login-password-input')
             setPassword(jquery(e.target).val())
-        
     }
 
     return (<div className="login-outer-container">

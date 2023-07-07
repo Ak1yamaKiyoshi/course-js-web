@@ -1,5 +1,8 @@
 import React from "react";
 import { push, remove, update } from "../redux/blogReducer";
+import { add, removeRoute, updateRoute, updateAllRoutes } from "../redux/blogRoutesReducer";
+
+
 import { login, unlog, switchlogin } from "../redux/adminReducer";
 import './Blog.css'
 import { Link } from "react-router-dom";
@@ -11,16 +14,17 @@ import { useNavigate } from "react-router-dom";
 export default function Blog({index}) {
     const blogs = useSelector((state) => state.blogs.blogs);
     const isLogged = useSelector((state) => state.admins.isAdminLogged);
+    const navigate = useNavigate();
     const dispatch = useDispatch();
+    const blogRoutes=useSelector((state) => state.blogRoutes);
     
     const [title, setTitle] =     React.useState(blogs[index].title);
     const [author, setAuthor] =   React.useState(blogs[index].author);
     const [content, setContent] = React.useState(blogs[index].content);
     const [date, setDate] =       React.useState(blogs[index].date);
     const [editing, setEditing] = React.useState(false);
-    console.log(blogs, title, author, content, date, editing, isLogged)
+    //console.log(blogs, title, author, content, date, editing, isLogged)
 
-    // todo: change blogreducer : add update action 
     function handleInput(e) {
         let id = e.target.id.trim(); 
         let val = jquery(e.target).val();
@@ -79,13 +83,20 @@ export default function Blog({index}) {
                     <input onChange={handleInput} id="blog-content" value={content}/> 
                 </div>
                 <div/>
-                {(isLogged)
-                    ? (<button onClick={() => { 
+                <button onClick={() => { 
                         setEditing(false);
                         confirmBlog();
-                    }}> Edit </button>)
-                    : (<></>)
-                }
+                }}> Edit </button>
+                <button onClick={() => {
+                    let blogsNew = [...blogs];
+                    blogsNew.splice(index.payload, 1);
+                    dispatch(remove(index))
+                    dispatch(updateAllRoutes(blogsNew));
+                    navigate("/home");
+                    
+                }}
+                > Delete blog </button>    
+                
                 </div>
             </div>
         </div>)

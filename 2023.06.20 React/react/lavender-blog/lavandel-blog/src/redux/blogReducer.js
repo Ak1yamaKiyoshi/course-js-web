@@ -4,10 +4,11 @@ export const blogsReducer = createSlice({
     name: 'blogs',
     initialState: {
         blogs: [    {
-        title: "Bananas",
-        content: "їстівний фрукт, за біологічним типом — ягода, що отримується з культивованих видів роду Банан. Як правило це: Musa acuminata та Musa × paradisiaca, а також Musa balbisiana, Musa fehi, Musa troglodytarum та ряд інших.",
-        author: "wikipedia",
-        date: "today",
+        title: "Листопадова жінка",
+        content: `
+        `,
+        author: "lavender",
+        date: "july 4",
     }, {
         title: "Quantum AI",
         content: "Google Quantum AI is advancing the state of the art of quantum computing and developing the tools for researchers to operate beyond classical capabilities.",
@@ -32,12 +33,11 @@ export const blogsReducer = createSlice({
             state.blogs.push(element.payload);
         },
         remove: (state, index) => {
-            state.blogs = [
-                ...state.blogs.slice(0, index.payload),
-                ...state.blogs.slice(index.payload + 1)
-            ]
+            state.blogs.splice(index.payload, 1);
         }, 
         update: (state, obj) => {
+            
+
             /*
             let obj = {
                 index: index,
@@ -48,7 +48,7 @@ export const blogsReducer = createSlice({
                     date:date
                 }
             }
-        */
+            */
             let index = obj.payload.index;
             let newBlog = obj.payload.new;
             let blogs = [... state.blogs];

@@ -5,7 +5,7 @@ import './Miniblog.css'
 import { Link, Route, Router, Routes } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import jquery from "jquery";
-import { useNavigate } from "react-router-dom";
+
 import Blog from "../Blog/Blog";
 
 

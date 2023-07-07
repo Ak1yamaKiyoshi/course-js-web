@@ -12,29 +12,36 @@ export const blogRoutesReducer = createSlice({
             {path:`/home/blog_${0}`, element: <> <Navigation/><Blog index={0}/></> },
             {path:`/home/blog_${1}`, element: <> <Navigation/><Blog index={1}/></> },
             {path:`/home/blog_${2}`, element: <> <Navigation/><Blog index={2}/></> },
+            {path:`/home/blog_${3}`, element: <> <Navigation/><Blog index={3}/></> },
         ]
     },
     reducers: {
         add: (state) => {
-            state.blogs.push(
+            state.routes.push(
                 {path:`/home/blog_${state.routes.length}`, element: <> <Navigation/><Blog index={state.routes.length}/></> }
             ) 
         },
-        remove: (state, index) => {
-            state.blogs = [
-                ...state.blogs.slice(0, index.payload),
-                ...state.blogs.slice(index.payload + 1)
-            ]
+        removeRoute: (state, index) => {
+            state.routes = 
+                state.routes.slice(index.payload, 1)
+            
         }, 
-        update: (state, obj) => {
+        updateRoute: (state, obj) => {
             let index = obj.payload.index;
             let newBlog = obj.payload.new;
-            let blogs = [... state.blogs];
+            let blogs = [... state.routes];
             blogs[index] = newBlog;
-            state.blogs = blogs;
+            state.routes = blogs;
+        },
+        updateAllRoutes: (state, blogs) => {
+            let routes = [];
+            for (let i = 0; i < blogs.payload.length; i++) {
+                routes.push({path:`/home/blog_${i}`, element: <> <Navigation/><Blog index={i}/></> })
+            }
+            state.routes = routes
         }
     }
 });
 
-export const { push, remove, update } = blogRoutesReducer.actions;
+export const { add, removeRoute, updateRoute,updateAllRoutes } = blogRoutesReducer.actions;
 export default blogRoutesReducer.reducer;
