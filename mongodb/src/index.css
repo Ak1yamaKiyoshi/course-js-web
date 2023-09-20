@@ -1,0 +1,57 @@
+:root {
+    --main: rgb(237, 237, 237);
+    --accent: cadetblue; 
+    --secondary: grey;
+    --text: brown;
+    --font-size-normal: 16;
+    --font-size-big:23;
+}
+.task input, .task textarea {
+    border:  none;
+    resize: none;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    color: var(--text);
+    background-color: var(--main);
+    width: fit-content;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 0px rgba(9, 9, 9, 0.404);
+}
+
+.task_checkbox {
+    width: 25px;
+}
+
+.task_info_container {
+    margin-right: 25px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task_date_container {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.task_title {
+    text-align: left;
+    font-size: var(--font-size-big);
+}
+
+.task_description {
+    text-align: left;
+    font-size: var(--font-size-normal);
+}
+
+.task button {
+    height: 30px;
+    width: 70px;
+}
